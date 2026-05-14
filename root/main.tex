@@ -1,4 +1,9 @@
-**Theorem.** The set of natural numbers equal to the sum of the factorials of their own decimal digits is exactly $\{1, 2, 145, 40585\}$. That is, defining $f(n) = \sum_{d \,\in\, \text{digits}(n)} d!$, we have
-$$\{\, n \in \mathbb{N} \mid f(n) = n \,\} = \{1,\, 2,\, 145,\, 40585\}.$$
+**Theorem.** The set of natural numbers equal to the sum of the factorials of their own digits is exactly $\{1, 2, 145, 40585\}$. That is,
+$$\{\, n \in \mathbb{N} \mid \sigma(n) = n \,\} = \{1,\, 2,\, 145,\, 40585\},$$
+where $\sigma(n)$ denotes the digit-factorial sum of $n$.
 
-*Proof.* Unsolved.
+*Proof.* We show the two containments separately.
+
+$(\subseteq)$ Let $n \in \mathbb{N}$ satisfy $\sigma(n) = n$. By \textbf{Upper Bound}, any fixed point of $\sigma$ satisfies $n \leq N$ for some explicit finite bound $N$. Applying \textbf{Finite Verification} to $n$ (which is admissible since $n \leq N$), we conclude that $n \in \{1, 2, 145, 40585\}$.
+
+$(\supseteq)$ For each element $k \in \{1, 2, 145, 40585\}$, the bound hypothesis required by \textbf{Finite Verification} is discharged by direct numerical computation, and \textbf{Finite Verification} then yields $\sigma(k) = k$ from the membership $k \in \{1, 2, 145, 40585\}$. Hence every element of the right-hand side is a fixed point of $\sigma$. $\blacksquare$
